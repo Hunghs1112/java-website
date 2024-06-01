@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Danh sách khóa học</title>
+    <link rel="stylesheet" type="text/css" href="/css/CourseList.css">
+</head>
+<body>
+<header>
+    <h1>Danh sách khóa học</h1>
+</header>
+<main>
+    <div class="course-container">
+        <div class="course-card" th:each="course : ${courses}">
+            <div class="course-image">
+                <img th:src="@{${course.image_url}}" alt="Hình ảnh khóa học">
+            </div>
+            <div class="course-details">
+                <h2 th:text="${course.title}">Tiêu đề khóa học</h2>
+                <p th:text="${course.description}">Mô tả khóa học</p>
+                <p class="course-price">
+                    <span class="original-price" th:text="${T(com.example.new_website.utils.CurrencyUtils).formatCurrency(course.original_price)}">Original Price</span>
+                    <span class="discounted-price" th:text="${T(com.example.new_website.utils.CurrencyUtils).formatCurrency(course.discounted_price)}">Discounted Price</span>
+                </p>
+                <button class="register-button">Đăng ký khóa học</button>
+            </div>
+        </div>
+    </div>
+</main>
+</body>
+</html>
+
