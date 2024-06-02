@@ -9,19 +9,21 @@ public class Course {
     private Long id;
     private String title;
     private String description;
-    private String image_url;
+    private String img_url;
     private double original_price;
     private double discounted_price;
+    private int course_type;
 
     // Constructors, getters and setters
     public Course() {}
 
-    public Course(String title, String description, String image_url, double original_price, double discounted_price) {
+    public Course(String title, String description, String img_url, double original_price, double discounted_price, int course_type) {
         this.title = title;
         this.description = description;
-        this.image_url = image_url;
+        this.img_url = img_url;
         this.original_price = original_price;
         this.discounted_price = discounted_price;
+        this.course_type = course_type;
     }
 
     public Long getId() {
@@ -48,12 +50,12 @@ public class Course {
         this.description = description;
     }
 
-    public String getImage_url() {
-        return image_url;
+    public String getImg_url() {
+        return img_url;
     }
 
-    public void setImage_url(String image_url) {
-        this.image_url = image_url;
+    public void setImg_url(String img_url) {
+        this.img_url = img_url;
     }
 
     public double getOriginal_price() {
@@ -70,5 +72,13 @@ public class Course {
 
     public void setDiscounted_price(double discounted_price) {
         this.discounted_price = discounted_price;
+    }
+
+    public int getCourse_type() {
+        return course_type;
+    }
+
+    public void setCourse_type(int course_type) {
+        this.course_type = course_type;
     }
 }

@@ -13,15 +13,16 @@
     <div class="course-container">
         <div class="course-card" th:each="course : ${courses}">
             <div class="course-image">
-                <img th:src="@{${course.image_url}}" alt="Hình ảnh khóa học">
+                <img th:src="@{${course.img_url}}" alt="Hình ảnh khóa học">
             </div>
             <div class="course-details">
                 <h2 th:text="${course.title}">Tiêu đề khóa học</h2>
                 <p th:text="${course.description}">Mô tả khóa học</p>
                 <p class="course-price">
-                    <span class="original-price" th:text="${T(com.example.new_website.utils.CurrencyUtils).formatCurrency(course.original_price)}">Original Price</span>
-                    <span class="discounted-price" th:text="${T(com.example.new_website.utils.CurrencyUtils).formatCurrency(course.discounted_price)}">Discounted Price</span>
+                    <span class="original-price" th:text="'₫' + ${course.original_price} + ' VND'">Original Price</span>
+                    <span class="discounted-price" th:text="'₫' + ${course.discounted_price} + ' VND'">Discounted Price</span>
                 </p>
+                <p class="course-type" th:text="${course.course_type == 1 ? 'Tính toán kết cấu' : 'Tự động hoá các phần mềm xây dựng'}">Course Type</p>
                 <button class="register-button">Đăng ký khóa học</button>
             </div>
         </div>
@@ -29,4 +30,3 @@
 </main>
 </body>
 </html>
-

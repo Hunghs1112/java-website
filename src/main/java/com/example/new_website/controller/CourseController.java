@@ -5,7 +5,14 @@ import com.example.new_website.service.CourseService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.DeleteMapping;
 
 import java.util.List;
 
@@ -21,6 +28,13 @@ public class CourseController {
         List<Course> courses = courseService.getAllCourses();
         model.addAttribute("courses", courses);
         return "CourseList";
+    }
+
+    @GetMapping("/home")
+    public String home(Model model) {
+        List<Course> courses = courseService.getAllCourses();
+        model.addAttribute("courses", courses);
+        return "home";
     }
 
     // REST API Endpoints
@@ -52,7 +66,10 @@ public class CourseController {
             if (existingCourse != null) {
                 existingCourse.setTitle(course.getTitle());
                 existingCourse.setDescription(course.getDescription());
-                existingCourse.setImage_url(course.getImage_url());
+                existingCourse.setImg_url(course.getImg_url());
+                existingCourse.setOriginal_price(course.getOriginal_price());
+                existingCourse.setDiscounted_price(course.getDiscounted_price());
+                existingCourse.setCourse_type(course.getCourse_type());
                 return courseService.saveCourse(existingCourse);
             } else {
                 return null;
