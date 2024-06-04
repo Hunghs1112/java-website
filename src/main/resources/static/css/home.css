@@ -8,7 +8,7 @@ body {
 .header {
     background-color: white;
     padding: 20px;
-    border-bottom: 1px solid #ccc;
+
 }
 
 /* Social Links */
@@ -16,6 +16,10 @@ body {
     display: flex;
     justify-content: flex-end;
     gap: 10px; /* Khoảng cách giữa các biểu tượng */
+    margin-left:300px;
+    margin-right:300px;
+    color: #17a2b8;
+
 }
 
 .social-links a {
@@ -41,10 +45,13 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
+margin-left:300px;
+margin-right:300px;
 }
 
 .logo img {
-    max-width: 150px;
+    max-width: 250px;
+
 }
 
 /* Search Bar */
@@ -76,10 +83,17 @@ body {
     padding: 0 0px;
 }
 
-.navbar .navbar-left, .navbar .navbar-right {
+.navbar .navbar-left {
     display: flex;
     align-items: center;
+    margin-left:320px;
+
 }
+.navbar .navbar-right {
+display: flex;
+align-items: center;
+margin-right:320px;}
+
 
 .navbar a {
     font-size: 16px;
@@ -139,7 +153,8 @@ body {
 .slideshow-container {
     max-width: 100%;
     position: relative;
-    margin: auto;
+    margin-left:300px;
+    margin-right:300px;
 }
 
 .mySlides {
@@ -206,28 +221,28 @@ body {
 /* Main Section */
 .main-section {
     padding: 40px;
-}
-
-/* Section Colors */
-.white-section {
-    background-color: white;
-}
-
-.gray-section, .dark-section {
-    background-color: #2f404b;
-    color: white;
+    margin-left:300px;
+    margin-right:300px;
 }
 
 .footer-section {
     padding: 20px;
+    background-color: #2f404b;
 }
 
 .footer-container {
     display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
+    justify-content: space-between;
     color: #fff;
     background-color: #2f404b;
+    margin-left: 300px;
+    margin-right: 300px;
+    flex-wrap: nowrap;
+    gap: 20px; /* Add gap between sections */
+}
+
+.footer-container > div {
+    flex: 1; /* Ensure equal width for all sections */
 }
 
 .footer-bottom {
@@ -250,8 +265,8 @@ body {
 }
 
 .footer-section ul {
-    list-style-type: none;
-    padding: 0;
+    list-style-type: disc; /* Change to disc for bullet points */
+    padding-left: 20px; /* Add padding to indent the bullets */
 }
 
 .footer-section ul li {
@@ -267,17 +282,24 @@ body {
     text-decoration: underline;
 }
 
-.social-links-footer {
+.social-links {
     display: flex;
     gap: 10px;
+    color: #17a2b8
 }
 
-.social-links-footer a img {
-    width: 40px;
-    height: 40px;
-    margin: 0 5px;
+.social-links a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 20px;
 }
 
+.footer-section4 img {
+    width: 100px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
 /* Floating Buttons */
 .floating-buttons {
     position: fixed;
