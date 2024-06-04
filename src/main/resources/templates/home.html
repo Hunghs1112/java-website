@@ -1,197 +1,68 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="_layout.html"
+      th:with="pageTitle='Home'">
 <head>
     <meta charset="UTF-8">
-    <title>Trang Chính</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <link rel="stylesheet" href="/css/home.css">
+    <link rel="stylesheet" th:href="@{/css/home.css}">
 </head>
-<body style="background-color:white;">
-<header class="header">
-    <div class="social-links">
-        <a href="#"><i class="fab fa-facebook-f"></i></a>
-        <a href="#"><i class="fab fa-twitter"></i></a>
-        <a href="#"><i class="fab fa-instagram"></i></a>
-        <a href="#"><i class="fab fa-youtube"></i></a>
-    </div>
-    <div class="header-container">
-        <div class="logo">
-            <img src="/images/logo.png" alt="BTF Logo">
+<body>
+<div layout:fragment="slideshow">
+    <div class="slideshow-container">
+        <div class="mySlides fade">
+            <img src="/images/B1.png" style="width:100%">
         </div>
-        <div class="search-bar">
-            <input type="text" placeholder="Nhập nội dung bạn cần tìm...">
-            <button type="button"><i class="fa fa-search"></i></button>
+        <div class="mySlides fade">
+            <img src="/images/B2.png" style="width:100%">
         </div>
-        
-        <div class="user-links">
-            <a href="#"><i class="fas fa-user"></i></a>
-            <a href="#"><i class="fas fa-shopping-cart"></i></a>
-        </div>
+        <!-- Next and previous buttons -->
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
     </div>
-</header>
-<nav class="navbar">
-    <div class="navbar-left">
-        <div class="dropdown">
-            <button class="dropbtn"><i class="fa fa-bars"></i></button>
-            <div class="dropdown-content" id="myDropdown">
-                <a href="#">Trang Chủ</a>
-                <a href="#">Giới Thiệu</a>
-                <a href="#">Khóa Học</a>
-                <a href="#">Blog Chia Sẻ</a>
-                <a href="#">Phần Mềm</a>
-                <a href="#">Đào Tạo Doanh Nghiệp</a>
-                <a href="#">Việc Làm</a>
-                <a href="#">Tài Liệu</a>
-                <a href="#">Hỏi Đáp</a>
-                <a href="#">Đăng Ký Tư Vấn</a>
-            </div>
-        </div>
-    </div>
-    <div class="navbar-right">
-        <a href="#home">Trang Chủ</a>
-        <a href="#about">Giới Thiệu</a>
-        <a href="#courses">Khóa Học</a>
-        <a href="#blog">Blog Chia Sẻ</a>
-        <a href="#software">Phần Mềm</a>
-        <a href="#training">Đào Tạo Doanh Nghiệp</a>
-        <a href="#jobs">Việc Làm</a>
-        <a href="#materials">Tài Liệu</a>
-        <a href="#faq">Hỏi Đáp</a>
-        <a href="#" class="register-btn" style="background-color: #17a2b8; color: white; padding: 14px 20px; text-decoration: none; ">Đăng Ký Tư Vấn</a>
-    </div>
-</nav>
-
-<!-- Slideshow container -->
-<div class="slideshow-container">
-    <div class="mySlides fade">
-
-        <img src="/images/B1.png" style="width:100%">
-
-    </div>
-    <div class="mySlides fade">
-
-        <img src="/images/B2.png" style="width:100%">
-
-    </div>
-    <!-- Next and previous buttons -->
-    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-    <a class="next" onclick="plusSlides(1)">&#10095;</a>
 </div>
 <br>
-
 <div style="text-align:center">
-    <span class="dot"></span>
-    <span class="dot"></span>
+    <span class="dot" onclick="currentSlide(1)"></span>
+    <span class="dot" onclick="currentSlide(2)"></span>
 </div>
-
-<main>
+<main layout:fragment="content">
     <section class="main-section white-section">
         <h1>Welcome to BTF</h1>
-        <!-- Nội dung chính của trang -->
+        <!-- Main content -->
     </section>
 </main>
-<footer>
-    <section class="footer-section gray-section">
-        <div class="footer-container">
-            <div class="footer-section">
-                <h3>Thông tin cần biết</h3>
-                <ul>
-                    <li>Điều khoản dịch vụ</li>
-                    <li>Chính sách bảo mật</li>
-                    <li>Giải quyết khiếu nại</li>
-                    <li>Hướng dẫn thanh toán</li>
-                </ul>
-            </div>
-            <div class="footer-section">
-                <h3>Đối tác</h3>
-                <ul>
-                    <li>Ket account</li>
-                    <li>Vifiance</li>
-                </ul>
-                <div class="social-links">
-                    <a href="#"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#"><i class="fab fa-twitter"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href="#"><i class="fab fa-youtube"></i></a>
-                </div>
-            </div>
-
-            <div class="footer-section">
-                <h3>Liên hệ</h3>
-                <p>Địa chỉ: Tòa 3 tòa nhà Vinhomes GreenBay, Nam Từ Liêm, Hà Nội</p>
-                <p>Điện thoại: 0961.050.948</p>
-                <p>Email: btf.digital.world@gmail.com</p>
-            </div>
-            <div class="logo">
-                <img src="/images/logo.png" alt="BTF Logo">
-            </div>
-        </div>
-    </section>
-
-    <div class="footer-bottom-container">
-        <p>© 2023 BTF-Digital World. All rights reserved.</p>
-    </div>
-</footer>
-
-
-<!-- Floating Buttons -->
-<div class="floating-buttons">
-    <div class="floating-button phone">
-        <img src="/images/phone-red.png" alt="Phone">
-        <span>Điện thoại: 0818100101</span>
-    </div>
-    <div class="floating-button zalo">
-        <img src="/images/zalo.png" alt="Zalo">
-    </div>
-    <div class="floating-button messenger">
-        <img src="/images/messenger.png" alt="Messenger">
-    </div>
-    <div class="floating-button whatsapp">
-        <img src="/images/whatsapp.png" alt="WhatsApp">
-    </div>
-</div>
-
 <script>
-    let slideIndex = 0;
-    showSlides();
+    let slideIndex = 1;
+    showSlides(slideIndex);
 
-    function showSlides() {
+    function plusSlides(n) {
+        showSlides(slideIndex += n);
+    }
+
+    function currentSlide(n) {
+        showSlides(slideIndex = n);
+    }
+
+    function showSlides(n) {
         let i;
         let slides = document.getElementsByClassName("mySlides");
         let dots = document.getElementsByClassName("dot");
+        if (n > slides.length) {slideIndex = 1}
+        if (n < 1) {slideIndex = slides.length}
         for (i = 0; i < slides.length; i++) {
             slides[i].style.display = "none";
         }
-        slideIndex++;
-        if (slideIndex > slides.length) {slideIndex = 1}
         for (i = 0; i < dots.length; i++) {
             dots[i].className = dots[i].className.replace(" active", "");
         }
         slides[slideIndex-1].style.display = "block";
         dots[slideIndex-1].className += " active";
-        setTimeout(showSlides, 20000); // Change image every 2 seconds
     }
 
-    function plusSlides(n) {
-        slideIndex += n;
-        if (slideIndex > document.getElementsByClassName("mySlides").length) {slideIndex = 1}
-        if (slideIndex < 1) {slideIndex = document.getElementsByClassName("mySlides").length}
-        showCurrentSlide();
-    }
-
-    function showCurrentSlide() {
-        let slides = document.getElementsByClassName("mySlides");
-        let dots = document.getElementsByClassName("dot");
-        for (let i = 0; i < slides.length; i++) {
-            slides[i].style.display = "none";
-        }
-        for (let i = 0; i < dots.length; i++) {
-            dots[i].className = dots[i].className.replace(" active", "");
-        }
-        slides[slideIndex-1].style.display = "block";
-        dots[slideIndex-1].className += " active";
-    }
+    setInterval(function() {
+        plusSlides(1);
+    }, 2000); // Change image every 2 seconds
 </script>
-
 </body>
 </html>

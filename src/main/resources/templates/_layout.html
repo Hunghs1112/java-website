@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="${pageTitle}">Trang Chính</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="/css/home.css">
+</head>
+<body style="background-color:white;">
+<header class="header">
+    <div class="social-links">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-youtube"></i></a>
+    </div>
+    <div class="header-container">
+        <div class="logo">
+            <img src="/images/logo.png" alt="BTF Logo">
+        </div>
+        <div class="search-bar">
+            <input type="text" placeholder="Nhập nội dung bạn cần tìm...">
+            <button type="button"><i class="fa fa-search"></i></button>
+        </div>
+        <div class="user-links">
+            <a href="#"><i class="fas fa-user"></i></a>
+            <a href="#"><i class="fas fa-shopping-cart"></i></a>
+        </div>
+    </div>
+</header>
+<nav class="navbar">
+    <div class="navbar-left">
+        <div class="dropdown">
+            <button class="dropbtn"><i class="fa fa-bars"></i></button>
+            <div class="dropdown-content" id="myDropdown">
+                <a th:href="@{/home}">Trang Chủ</a>
+                <a th:href="@{/about}">Giới Thiệu</a>
+                <a th:href="@{/courses}">Khóa Học</a>
+                <a th:href="@{/blog}">Blog Chia Sẻ</a>
+                <a th:href="@{/software}">Phần Mềm</a>
+                <a th:href="@{/training}">Đào Tạo Doanh Nghiệp</a>
+                <a th:href="@{/jobs}">Việc Làm</a>
+                <a th:href="@{/materials}">Tài Liệu</a>
+                <a th:href="@{/faq}">Hỏi Đáp</a>
+                <a th:href="@{/register}">Đăng Ký Tư Vấn</a>
+            </div>
+        </div>
+    </div>
+    <div class="navbar-right">
+        <a th:href="@{/home}">Trang Chủ</a>
+        <a th:href="@{/about}">Giới Thiệu</a>
+        <a th:href="@{/courses}">Khóa Học</a>
+        <a th:href="@{/blog}">Blog Chia Sẻ</a>
+        <a th:href="@{/software}">Phần Mềm</a>
+        <a th:href="@{/training}">Đào Tạo Doanh Nghiệp</a>
+        <a th:href="@{/jobs}">Việc Làm</a>
+        <a th:href="@{/materials}">Tài Liệu</a>
+        <a th:href="@{/faq}">Hỏi Đáp</a>
+        <a th:href="@{/register}" class="register-btn" style="background-color: #17a2b8; color: white; padding: 14px 20px; text-decoration: none;">Đăng Ký Tư Vấn</a>
+    </div>
+
+</nav>
+<main layout:fragment="content">
+    <!-- Default content, if any -->
+</main>
+<footer>
+    <section class="footer-section gray-section">
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>Thông tin cần biết</h3>
+                <ul>
+                    <li>Điều khoản dịch vụ</li>
+                    <li>Chính sách bảo mật</li>
+                    <li>Giải quyết khiếu nại</li>
+                    <li>Hướng dẫn thanh toán</li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Đối tác</h3>
+                <ul>
+                    <li>Ket account</li>
+                    <li>Vifiance</li>
+                </ul>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>Liên hệ</h3>
+                <p>Địa chỉ: Tòa 3 tòa nhà Vinhomes GreenBay, Nam Từ Liêm, Hà Nội</p>
+                <p>Điện thoại: 0961.050.948</p>
+                <p>Email: btf.digital.world@gmail.com</p>
+            </div>
+            <div class="logo">
+                <img src="/images/logo-2.png" alt="BTF Logo">
+            </div>
+        </div>
+    </section>
+    <div class="footer-bottom-container">
+        <p>© 2023 BTF-Digital World. All rights reserved.</p>
+    </div>
+</footer>
+<!-- Floating Buttons -->
+<div class="floating-buttons">
+    <div class="floating-button phone">
+        <img src="/images/phone-red.png" alt="Phone">
+        <span>Điện thoại: 0818100101</span>
+    </div>
+    <div class="floating-button zalo">
+        <img src="/images/zalo.png" alt="Zalo">
+    </div>
+    <div class="floating-button messenger">
+        <img src="/images/messenger.png" alt="Messenger">
+    </div>
+    <div class="floating-button whatsapp">
+        <img src="/images/whatsapp.png" alt="WhatsApp">
+    </div>
+</div>
+</body>
+</html>
