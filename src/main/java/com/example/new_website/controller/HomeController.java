@@ -21,9 +21,7 @@ public class HomeController {
     public String aboutPage() {
         return "about";
     }
-
-
-
+    
     @GetMapping("/blog")
     public String blogPage() {
         return "blog";
@@ -54,8 +52,8 @@ public class HomeController {
         return "faq";
     }
 
-    @GetMapping("/register")
+    @GetMapping("/advice")
     public String registerPage() {
-        return "register";
+        return "advice";
     }
 }
