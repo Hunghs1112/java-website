@@ -12,22 +12,22 @@ body {
 }
 
 /* Social Links */
-.social-links {
+.header-social-links {
     display: flex;
     justify-content: flex-end;
     gap: 10px; /* Khoảng cách giữa các biểu tượng */
     margin-left:300px;
     margin-right:300px;
-    color: #17a2b8;
+
 
 }
 
-.social-links a {
+.header-social-links a {
     text-decoration: none;
     color: #17a2b8; /* Màu của các biểu tượng */
 }
 
-.social-links a:hover {
+.header-social-links a:hover {
     color: #25657e; /* Màu khi di chuột qua biểu tượng */
 }
 
@@ -282,14 +282,14 @@ margin-right:320px;}
     text-decoration: underline;
 }
 
-.social-links {
+.footer-social-links {
     display: flex;
     gap: 10px;
-    color: #17a2b8
+
 }
 
-.social-links a {
-    color: #ffffff;
+.footer-social-links a {
+    color: #17a2b8;
     text-decoration: none;
     font-size: 20px;
 }
