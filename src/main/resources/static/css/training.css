@@ -5,9 +5,6 @@ body {
 }
 
 main {
-    width: 100%;
-    margin-left:300px;
-    margin-right:300px;
 }
 
 h1, h2 {
@@ -33,12 +30,11 @@ p, ul, ol {
 }
 
 .section1 {
-    position: relative;
-    text-align: center;
+    margin-left:300px;
+
 }
 
 .section1 img {
-    width: 100%;
     height: auto;
 }
 
@@ -48,7 +44,6 @@ p, ul, ol {
 }
 
 .section2 img {
-    width: 100%;
     height: auto;
     align: right;
 }

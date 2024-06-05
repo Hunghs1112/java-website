@@ -41,10 +41,7 @@ public class HomeController {
         return "jobs";
     }
 
-    @GetMapping("/materials")
-    public String materialsPage() {
-        return "materials";
-    }
+
 
     @GetMapping("/faq")
     public String faqPage() {

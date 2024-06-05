@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="_layout.html"
+      th:with="pageTitle='Chi Tiết Khóa Học'">
+<head>
+    <meta charset="UTF-8">
+    <title>Chi Tiết Khóa Học</title>
+    <link rel="stylesheet" type="text/css" href="/css/course_detail.css">
+</head>
+<body>
+<main layout:fragment="content">
+    <div class="course-detail-container">
+        <div class="course-info">
+            <img th:src="${course.img_url}" alt="Course Image" class="course-image">
+            <h1 th:text="${course.title}">Course Title</h1>
+            <p th:text="${course.description}">Course Description</p>
+            <p class="course-instructor">
+                Giảng viên: <span th:text="${course.course_type == 1 ? 'James Hoàng' : 'Chiêu Nguyễn'}"></span>
+            </p>
+            <p class="course-price">
+                <span class="original-price" th:text="'₫' + ${course.original_price} + ' VND'">Original Price</span>
+                <span class="discounted-price" th:text="'₫' + ${course.discounted_price} + ' VND'">Discounted Price</span>
+            </p>
+            <button class="register-button">Đăng ký khóa học</button>
+        </div>
+    </div>
+</main>
+</body>
+</html>

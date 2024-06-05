@@ -1,0 +1,86 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+}
+
+header {
+    background-color: #4CAF50;
+    color: white;
+    padding: 1rem;
+    text-align: center;
+}
+
+main {
+    margin-left: 320px;
+    margin-right: 320px;
+}
+
+.courses-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 42px; /* Ensures consistent spacing between cards */
+    justify-content: flex-start; /* Align items from left to right */
+}
+
+.course-card {
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    width: 25%; /* Ensure three cards per row */
+    margin-bottom: 16px;
+    padding: 16px;
+    text-align: left;
+}
+
+.course-card img {
+    object-fit: cover;
+    width: 100%;
+    height: 200px;
+    border-radius: 8px 8px 0 0;
+}
+
+.course-card h2 {
+    font-size: 1.25rem;
+    margin: 16px 0;
+}
+
+.course-card p {
+    font-size: 0.875rem;
+    color: #666;
+}
+
+.course-price {
+    font-size: 1rem;
+    margin: 8px 0;
+}
+
+.original-price {
+    text-decoration: line-through;
+    color: #999;
+    margin-right: 0.5rem;
+}
+
+.discounted-price {
+    color: #e74c3c;
+    font-weight: bold;
+}
+
+.register-button {
+    background-color: #f39c12;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+    display: block;
+    margin-top: 16px;
+    text-align: center;
+}
+
+.register-button:hover {
+    background-color: #e67e22;
+}

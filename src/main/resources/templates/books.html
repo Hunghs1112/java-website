@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="_layout.html"
+      th:with="pageTitle='Tài Liệu'">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/css/books.css">
+    <title>Tài Liệu</title>
+</head>
+<body>
+<main layout:fragment="content">
+    <h1>Tài Liệu</h1>
+    <div class="books-container">
+        <div class="book-card" th:each="book : ${books}">
+            <img th:src="${book.imageUrl}" alt="Book Cover">
+            <h2 th:text="${book.title}"></h2>
+            <p th:text="${book.description}"></p>
+            <a th:href="@{/book/{id}(id=${book.id})}">Liên hệ</a>
+        </div>
+    </div>
+</main>
+</body>
+</html>
