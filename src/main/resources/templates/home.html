@@ -2,36 +2,168 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org"
       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
       layout:decorate="_layout.html"
-      th:with="pageTitle='Home'">
+      th:with="pageTitle='Home'" xmlns:class="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" th:href="@{/css/home.css}">
+    <title>Home</title>
 </head>
 <body>
-<div layout:fragment="slideshow">
-    <div class="slideshow-container">
-        <div class="mySlides fade">
-            <img src="/images/B1.png" style="width:100%">
-        </div>
-        <div class="mySlides fade">
-            <img src="/images/B2.png" style="width:100%">
-        </div>
-        <!-- Next and previous buttons -->
-        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-        <a class="next" onclick="plusSlides(1)">&#10095;</a>
-    </div>
-</div>
-<br>
-<div style="text-align:center">
-    <span class="dot" onclick="currentSlide(1)"></span>
-    <span class="dot" onclick="currentSlide(2)"></span>
-</div>
+
 <main layout:fragment="content">
-    <section class="main-section white-section">
-        <h1>Trang chủ</h1>
-        <!-- Main content -->
-    </section>
+    <div class="section-1">
+            <div class="slideshow-container">
+                <div class="mySlides fade">
+                    <img th:src="@{/images/B1.png}" style="width:100%">
+                </div>
+                <div class="mySlides fade">
+                    <img th:src="@{/images/B2.png}" style="width:100%">
+                </div>
+                <!-- Next and previous buttons -->
+                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                <a class="next" onclick="plusSlides(1)">&#10095;</a>
+            </div>
+            <br>
+        </div>
+    <div class="section-2">
+        <div class="section-header">
+            <h3>TÍNH TOÁN KẾT CẤU</h3>
+        </div>
+        <div class="course-container">
+            <div class="course-card" th:each="course : ${courses}">
+                <div class="course-image">
+                    <img th:src="@{${course.img_url}}" alt="Hình ảnh khóa học">
+                </div>
+                <div class="course-details">
+                    <h2 th:text="${course.title}">Tiêu đề khóa học</h2>
+                    <p th:text="${course.description}">Mô tả khóa học</p>
+                    <p class="course-price">
+                        <span class="original-price" th:text="'₫' + ${course.original_price} + ' VND'">Original Price</span>
+                        <span class="discounted-price" th:text="'₫' + ${course.discounted_price} + ' VND'">Discounted Price</span>
+                    </p>
+                    <p class="course-type" th:text="${course.course_type == 1 ? 'Tính toán kết cấu' : 'Tự động hoá các phần mềm xây dựng'}">Course Type</p>
+                    <button class="register-button">Đăng ký khóa học</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="section-3">
+        <h3>Tự động hoá các phần mềm xây dựng</h3>
+        <div class="course-container">
+            <div class="course-card" th:each="course : ${courses}">
+                <div class="course-image">
+                    <img th:src="@{${course.img_url}}" alt="Hình ảnh khóa học">
+                </div>
+                <div class="course-details">
+                    <h2 th:text="${course.title}">Tiêu đề khóa học</h2>
+                    <p th:text="${course.description}">Mô tả khóa học</p>
+                    <p class="course-price">
+                        <span class="original-price" th:text="'₫' + ${course.original_price} + ' VND'">Original Price</span>
+                        <span class="discounted-price" th:text="'₫' + ${course.discounted_price} + ' VND'">Discounted Price</span>
+                    </p>
+                    <p class="course-type" th:text="${course.course_type == 1 ? 'Tính toán kết cấu' : 'Tự động hoá các phần mềm xây dựng'}">Course Type</p>
+                    <button class="register-button">Đăng ký khóa học</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section-4">
+        <h3>Tài liệu</h3>
+        <p>Content for section 4</p>
+    </div>
+        <div class="section-5">
+            <div class="section-header">
+                <h1>DỊCH VỤ</h1>
+            </div>
+            <div class="services-container">
+                <div class="service-card">
+                    <img src="path/to/service1.png" alt="Service 1" class="service-image">
+                    <h2>Chia sẻ kiến thức</h2>
+                    <p>Kinh nghiệm thực tế và nhiều kỹ năng đang được chia sẻ.</p>
+                    <a href="#">Click xem thêm</a>
+                </div>
+                <div class="service-card">
+                    <img src="path/to/service2.png" alt="Service 2" class="service-image">
+                    <h2>Đào tạo kỹ sư</h2>
+                    <p>Đào tạo kỹ sư với nhiều chương trình ưu đãi hấp dẫn.</p>
+                    <a href="#">Click xem thêm</a>
+                </div>
+                <div class="service-card">
+                    <img src="path/to/service3.png" alt="Service 3" class="service-image">
+                    <h2>Phần mềm kết cấu</h2>
+                    <p>Các phần mềm hữu ích hỗ trợ công việc của kỹ sư xây dựng.</p>
+                    <a href="#">Click xem thêm</a>
+                </div>
+                <div class="service-card">
+                    <img src="path/to/service4.png" alt="Service 4" class="service-image">
+                    <h2>Đối tác doanh nghiệp</h2>
+                    <p>Hợp tác với các doanh nghiệp trong và ngoài nước.</p>
+                    <a href="#">Click xem thêm</a>
+                </div>
+                <div class="service-card">
+                    <img src="path/to/service5.png" alt="Service 5" class="service-image">
+                    <h2>Việc làm</h2>
+                    <p>Giới thiệu việc làm phù hợp cho các kỹ sư.</p>
+                    <a href="#">Click xem thêm</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="section-6">
+        <div class="form-container">
+            <div class="form-content">
+                <h2>Đăng ký học/tìm hiểu</h2>
+                <p>Vui lòng hoàn thiện form thông tin bên dưới. FUNiX sẽ liên hệ với bạn để giải đáp mọi thắc mắc, hoàn toàn miễn phí.</p>
+                <form>
+                    <div class="form-group">
+                        <label for="name">Họ & tên</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Số điện thoại</label>
+                        <input type="tel" id="phone" name="phone" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="dob">Năm sinh</label>
+                        <select id="dob" name="dob">
+                            <option value="sinhvien">Sinh viên</option>
+                            <option value="nguoidiLam">Người đi làm</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="course">Chọn khóa học</label>
+                        <select id="course" name="course">
+                            <!-- Options should be populated from the database -->
+                            <option value="course1">Khóa học 1</option>
+                            <option value="course2">Khóa học 2</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="additional">Thông tin bổ sung</label>
+                        <textarea id="additional" name="additional" rows="4"></textarea>
+                    </div>
+                    <button type="submit">Đăng ký ngay</button>
+                </form>
+            </div>
+            <div class="form-image">
+                <img src="path/to/image.png" alt="Registration Image">
+            </div>
+        </div>
+    </div>
+
 </main>
+</body>
+
+</html>
 <script>
     let slideIndex = 1;
     showSlides(slideIndex);
@@ -62,7 +194,5 @@
 
     setInterval(function() {
         plusSlides(1);
-    }, 2000); // Change image every 2 seconds
+    }, 5000); // Change image every 5 seconds
 </script>
-</body>
-</html>

@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <title th:text="${pageTitle}">Trang Chính</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <link rel="stylesheet" href="/css/home.css">
+    <link rel="stylesheet" href="/css/_layout.css">
 </head>
 <body style="background-color:white;">
 <header class="header">
@@ -24,7 +24,7 @@
             <button type="button"><i class="fa fa-search"></i></button>
         </div>
         <div class="user-links">
-            <a href="#"><i class="fas fa-user"></i></a>
+            <a th:href="@{/login}"><i class="fas fa-user"></i></a>
             <a href="#"><i class="fas fa-shopping-cart"></i></a>
         </div>
     </div>

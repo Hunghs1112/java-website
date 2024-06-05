@@ -16,12 +16,11 @@ public class HomeController {
     public String homePage() {
         return "home";
     }
-
     @GetMapping("/about")
     public String aboutPage() {
         return "about";
     }
-    
+
     @GetMapping("/blog")
     public String blogPage() {
         return "blog";

@@ -1,6 +1,7 @@
 package com.example.new_website.controller;
 
 import com.example.new_website.model.Course;
+import com.example.new_website.repository.CourseRepository;
 import com.example.new_website.service.CourseService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -22,6 +23,7 @@ public class CourseController {
 
     @Autowired
     private CourseService courseService;
+    private CourseRepository courseRepository;
 
     @GetMapping
     public String getAllCourses(Model model) {
