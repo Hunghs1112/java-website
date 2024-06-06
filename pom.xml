@@ -47,11 +47,11 @@
 			<artifactId>spring-session-core</artifactId>
 		</dependency>
 
-		<!-- Thymeleaf Extras for Spring Security -->
-		<dependency>
-			<groupId>org.thymeleaf.extras</groupId>
-			<artifactId>thymeleaf-extras-springsecurity6</artifactId>
-		</dependency>
+<!--		&lt;!&ndash; Thymeleaf Extras for Spring Security &ndash;&gt;-->
+<!--		<dependency>-->
+<!--			<groupId>org.thymeleaf.extras</groupId>-->
+<!--			<artifactId>thymeleaf-extras-springsecurity6</artifactId>-->
+<!--		</dependency>-->
 
 		<!-- MySQL Connector -->
 		<dependency>
@@ -74,11 +74,7 @@
 			<scope>test</scope>
 		</dependency>
 
-<!--		&lt;!&ndash; Spring Security Starter &ndash;&gt;-->
-<!--		<dependency>-->
-<!--			<groupId>org.springframework.boot</groupId>-->
-<!--			<artifactId>spring-boot-starter-security</artifactId>-->
-<!--		</dependency>-->
+		<!-- Thymeleaf Layout Dialect -->
 		<dependency>
 			<groupId>nz.net.ultraq.thymeleaf</groupId>
 			<artifactId>thymeleaf-layout-dialect</artifactId>
