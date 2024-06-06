@@ -13,6 +13,9 @@
     <h1>Danh sách khóa học</h1>
 </header>
 <main layout:fragment="content">
+    <div class= "courses-header">
+        <h1>Các khoá học</h1>
+    </div>
     <div class="courses-container">
         <div class="course-card" th:each="course : ${courses}">
             <img th:src="${course.img_url}" alt="Hình ảnh khóa học" class="course-image">

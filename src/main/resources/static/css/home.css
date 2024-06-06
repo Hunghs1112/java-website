@@ -237,6 +237,7 @@ img {
   align-items: center;
   justify-content: center;
   margin-bottom: 20px;
+  padding-bottom: 10px;
 }
 
 .services-container {
@@ -336,7 +337,7 @@ img {
 }
 
 .form-group-half .form-group {
-  width: 48%;
+  width: 320px;
 }
 
 .form-group textarea,

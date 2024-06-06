@@ -1,6 +1,5 @@
 package com.example.new_website.controller;
 
-
 import com.example.new_website.model.Book;
 import com.example.new_website.service.BookService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,8 +25,23 @@ public class BookController {
         return "books";
     }
 
+    @GetMapping("/books/{id}")
+    public String getBooksPageBookDetails(@PathVariable Long id, Model model) {
+        Book book = bookService.getBookById(id);
+        List<Book> allBooks = bookService.getAllBooks();
+        List<Book> featuredBooks = allBooks.stream()
+                .filter(b -> !b.getId().equals(id))
+                .collect(Collectors.collectingAndThen(Collectors.toList(), collected -> {
+                    Collections.shuffle(collected);
+                    return collected.stream().limit(5).collect(Collectors.toList());
+                }));
+        model.addAttribute("book", book);
+        model.addAttribute("featuredBooks", featuredBooks);
+        return "book_detail";
+    }
+
     @GetMapping("/book/{id}")
-    public String getBookDetails(@PathVariable Long id, Model model) {
+    public String getHomeBookDetails(@PathVariable Long id, Model model) {
         Book book = bookService.getBookById(id);
         List<Book> allBooks = bookService.getAllBooks();
         List<Book> featuredBooks = allBooks.stream()

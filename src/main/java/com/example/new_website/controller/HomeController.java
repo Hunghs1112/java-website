@@ -24,10 +24,10 @@ public class HomeController {
 
     @RequestMapping("/")
     public String index() {
-        return "redirect:/home";
+        return "redirect:/index";
     }
 
-    @RequestMapping("/home")
+    @RequestMapping("/index")
     public String homePage(Model model) {
         // Fetch all courses
         List<Course> courses = courseService.getAllCourses();
@@ -50,7 +50,7 @@ public class HomeController {
         model.addAttribute("automationCourses", automationCourses);
         model.addAttribute("books", books);
 
-        return "home";
+        return "index";
     }
 
     @GetMapping("/about")

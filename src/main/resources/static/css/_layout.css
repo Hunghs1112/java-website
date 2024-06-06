@@ -5,11 +5,13 @@ body {
     padding: 0;
 }
 
-.header {
+header {
     background-color: white;
-    max-height: 320px;
+    color: white;
+    padding: 1rem;
+    text-align: center;
+    max-height: 270px;
 }
-
 /* Social Links */
 .header-social-links {
     display: flex;

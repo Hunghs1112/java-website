@@ -39,4 +39,19 @@ public class CourseController {
         model.addAttribute("featuredCourses", featuredCourses);
         return "course_detail";
     }
+
+    @GetMapping("/course/{id}")
+    public String getHomeCourseDetails(@PathVariable Long id, Model model) {
+        Course course = courseService.getCourseById(id);
+        List<Course> allCourses = courseService.getAllCourses();
+        List<Course> featuredCourses = allCourses.stream()
+                .filter(c -> !c.getId().equals(id))
+                .collect(Collectors.collectingAndThen(Collectors.toList(), collected -> {
+                    Collections.shuffle(collected);
+                    return collected.stream().limit(5).collect(Collectors.toList());
+                }));
+        model.addAttribute("course", course);
+        model.addAttribute("featuredCourses", featuredCourses);
+        return "course_detail";
+    }
 }
