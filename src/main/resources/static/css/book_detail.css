@@ -8,8 +8,9 @@ body {
 
 
 main {
-    margin-left: 320px;
-    margin-right: 320px;
+margin-left:320px;
+margin-right:320px;
+min-height: 600px;
 }
 
 .book-detail-container {
@@ -20,11 +21,13 @@ main {
 
 .book-detail {
     flex: 3;
+    display: flex;
+      gap: 30px;
 }
 
 .book-detail img {
-    max-width: 300px;
-    height: auto;
+    width: 300px;
+    height: 400px;
 }
 
 .book-info {
@@ -49,7 +52,7 @@ main {
 }
 
 .zalo-icon {
-display: flex;
+    display: flex;
     position: fixed;
     bottom: 20px;
     right: 20px;

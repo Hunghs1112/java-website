@@ -4,3 +4,9 @@ body, html {
     font-family: Arial, sans-serif;
     background-color: #f3f3f3;
 }
+
+main {
+margin-left:320px;
+margin-right:320px;
+min-height: 600px;
+}

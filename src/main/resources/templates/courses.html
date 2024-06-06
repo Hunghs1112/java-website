@@ -26,7 +26,7 @@
                 <span class="discounted-price" th:text="'₫' + ${course.discounted_price} + ' VND'">Discounted Price</span>
             </p>
             <p class="course-type" th:text="${course.course_type == 1 ? 'Tính toán kết cấu' : 'Tự động hoá các phần mềm xây dựng'}">Course Type</p>
-            <a th:href="@{/courses/{id}(id=${course.id})}" class="register-button">Đăng ký khóa học</a>
+            <a th:href="@{/courses/{id}(id=${course.id})}" class="register-button">Xem chi tiết</a>
         </div>
     </div>
 </main>

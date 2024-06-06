@@ -15,7 +15,10 @@
             <img th:src="${book.imageUrl}" alt="Book Cover">
             <div class="book-info">
                 <h2 th:text="${book.title}"></h2>
+                <p th:text="'Tác giả: ' + ${book.author}"></p>
+                <p th:text="'Năm xuất bản: ' + ${book.year}"></p>
                 <p th:text="${book.description}"></p>
+                <p><a href="https://zalo.me" target="_blank">Nhận sách ở đây</a></p>
             </div>
         </div>
         <div class="featured-books">
@@ -27,8 +30,5 @@
         </div>
     </div>
 </main>
-<a href="https://zalo.me" target="_blank">
-    <img src="/images/zalo.png" alt="Zalo" class="zalo-icon">
-</a>
 </body>
 </html>

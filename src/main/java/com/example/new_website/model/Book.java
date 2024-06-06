@@ -10,10 +10,11 @@ public class Book {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-
     private String title;
     private String imageUrl;
     private String description;
+    private String author;
+    private String year;
 
     // Getters and setters
     public Long getId() {
@@ -47,4 +48,21 @@ public class Book {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    public String getAuthor() {
+        return author;
+    }
+
+    public void setAuthor(String author) {
+        this.author = author;
+    }
+
+    public String getYear() {
+        return year;
+    }
+
+    public void setYear(String year) {
+        this.year = year;
+    }
 }
+
