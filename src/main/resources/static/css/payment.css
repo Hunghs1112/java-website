@@ -1,0 +1,53 @@
+.payment-container, .success-container {
+    width: 50%;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    text-align: center;
+}
+
+.payment-container h1, .success-container h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.payment-container p, .success-container p {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.payment-container form div, .success-container div {
+    margin-bottom: 15px;
+}
+
+.payment-container form label, .success-container label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 16px;
+}
+
+.payment-container form input[type="text"], .success-container input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.payment-container form button, .success-container .button {
+    padding: 10px 20px;
+    font-size: 18px;
+    color: #fff;
+    background-color: #28a745;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.payment-container form button:hover, .success-container .button:hover {
+    background-color: #218838;
+}

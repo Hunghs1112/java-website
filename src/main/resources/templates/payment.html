@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="_layout.html"
+      th:with="pageTitle='Thanh Toán'">
+<head>
+    <meta charset="UTF-8">
+    <title>Thanh Toán</title>
+    <link rel="stylesheet" type="text/css" href="/css/payment.css">
+</head>
+<body>
+<main layout:fragment="content">
+    <div class="payment-container">
+        <h1>Thanh Toán</h1>
+        <p>Khóa học: <span th:text="${course.title}"></span></p>
+        <p>Giá: <span th:text="'₫' + ${course.discounted_price} + ' VND'"></span></p>
+        <form th:action="@{/process-payment}" method="post">
+            <input type="hidden" name="courseId" th:value="${course.id}" />
+            <div>
+                <label for="cardNumber">Số thẻ:</label>
+                <input type="text" id="cardNumber" name="cardNumber" required>
+            </div>
+            <div>
+                <label for="expiryDate">Ngày hết hạn:</label>
+                <input type="text" id="expiryDate" name="expiryDate" required>
+            </div>
+            <div>
+                <label for="cvv">CVV:</label>
+                <input type="text" id="cvv" name="cvv" required>
+            </div>
+            <button type="submit">Thanh Toán</button>
+        </form>
+    </div>
+</main>
+</body>
+</html>

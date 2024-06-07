@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="_layout.html"
+      th:with="pageTitle='Thanh Toán Thành Công'">
+<head>
+    <meta charset="UTF-8">
+    <title>Thanh Toán Thành Công</title>
+    <link rel="stylesheet" type="text/css" href="/css/payment.css">
+</head>
+<body>
+<main layout:fragment="content">
+    <div class="success-container">
+        <h1>Thanh Toán Thành Công</h1>
+        <p>Bạn đã đăng ký thành công khóa học: <span th:text="${course.title}"></span></p>
+        <p>Chúng tôi sẽ gửi thông tin chi tiết đến email của bạn.</p>
+        <a th:href="@{/courses/{id}(id=${course.id})}" class="button">Quay lại khóa học</a>
+    </div>
+</main>
+</body>
+</html>
