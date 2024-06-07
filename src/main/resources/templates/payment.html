@@ -7,28 +7,96 @@
     <meta charset="UTF-8">
     <title>Thanh Toán</title>
     <link rel="stylesheet" type="text/css" href="/css/payment.css">
+    <script>
+        function toggleCardDetails() {
+            const atmOption = document.getElementById("httt-3");
+            const cardDetails = document.getElementById("cardDetails");
+            cardDetails.style.display = atmOption.checked ? "block" : "none";
+        }
+    </script>
 </head>
 <body>
 <main layout:fragment="content">
     <div class="payment-container">
         <h1>Thanh Toán</h1>
         <p>Khóa học: <span th:text="${course.title}"></span></p>
-        <p>Giá: <span th:text="'₫' + ${course.discounted_price} + ' VND'"></span></p>
+        <p>Giá: <span th:text="${formattedPrice}"></span></p>
         <form th:action="@{/process-payment}" method="post">
             <input type="hidden" name="courseId" th:value="${course.id}" />
-            <div>
-                <label for="cardNumber">Số thẻ:</label>
-                <input type="text" id="cardNumber" name="cardNumber" required>
+
+            <div class="col-md-8 order-md-1">
+                <h4 class="mb-3">Thông tin khách hàng</h4>
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <label for="kh_ten">Họ tên</label>
+                        <input type="text" class="form-control" name="kh_ten" id="kh_ten" required>
+                    </div>
+                    <div class="col-md-12">
+                        <label for="kh_gioitinh">Giới tính</label>
+                        <input type="text" class="form-control" name="kh_gioitinh" id="kh_gioitinh" required>
+                    </div>
+                    <div class="col-md-12">
+                        <label for="kh_diachi">Địa chỉ</label>
+                        <input type="text" class="form-control" name="kh_diachi" id="kh_diachi" required>
+                    </div>
+                    <div class="col-md-12">
+                        <label for="kh_dienthoai">Điện thoại</label>
+                        <input type="text" class="form-control" name="kh_dienthoai" id="kh_dienthoai" required>
+                    </div>
+                    <div class="col-md-12">
+                        <label for="kh_email">Email</label>
+                        <input type="email" class="form-control" name="kh_email" id="kh_email" required>
+                    </div>
+                    <div class="col-md-12">
+                        <label for="kh_ngaysinh">Ngày sinh</label>
+                        <input type="date" class="form-control" name="kh_ngaysinh" id="kh_ngaysinh" required>
+                    </div>
+                    <div class="col-md-12">
+                        <label for="kh_cmnd">CMND</label>
+                        <input type="text" class="form-control" name="kh_cmnd" id="kh_cmnd" required>
+                    </div>
+                </div>
+
+                <h4 class="mb-3">Hình thức thanh toán</h4>
+
+                <div class="d-block my-3">
+                    <div class="custom-control custom-radio">
+                        <input id="httt-1" name="httt_ma" type="radio" class="custom-control-input" required
+                               value="1" onclick="toggleCardDetails()">
+                        <label class="custom-control-label" for="httt-1">Tiền mặt</label>
+                    </div>
+                    <div class="custom-control custom-radio">
+                        <input id="httt-2" name="httt_ma" type="radio" class="custom-control-input" required
+                               value="2" onclick="toggleCardDetails()">
+                        <label class="custom-control-label" for="httt-2">Chuyển khoản</label>
+                    </div>
+                    <div class="custom-control custom-radio">
+                        <input id="httt-3" name="httt_ma" type="radio" class="custom-control-input" required
+                               value="3" onclick="toggleCardDetails()">
+                        <label class="custom-control-label" for="httt-3">ATM</label>
+                    </div>
+                </div>
+
+                <hr class="mb-4">
+
+                <div id="cardDetails" style="display:none;">
+                    <div>
+                        <label for="cardNumber">Số thẻ:</label>
+                        <input type="text" id="cardNumber" name="cardNumber" class="form-control">
+                    </div>
+                    <div>
+                        <label for="expiryDate">Ngày hết hạn:</label>
+                        <input type="text" id="expiryDate" name="expiryDate" class="form-control">
+                    </div>
+                    <div>
+                        <label for="cvv">CVV:</label>
+                        <input type="text" id="cvv" name="cvv" class="form-control">
+                    </div>
+                </div>
+
+                <button class="btn btn-primary btn-lg btn-block" type="submit" name="btnDatHang">Đặt hàng</button>
             </div>
-            <div>
-                <label for="expiryDate">Ngày hết hạn:</label>
-                <input type="text" id="expiryDate" name="expiryDate" required>
-            </div>
-            <div>
-                <label for="cvv">CVV:</label>
-                <input type="text" id="cvv" name="cvv" required>
-            </div>
-            <button type="submit">Thanh Toán</button>
         </form>
     </div>
 </main>

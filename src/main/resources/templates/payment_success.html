@@ -13,8 +13,19 @@
     <div class="success-container">
         <h1>Thanh Toán Thành Công</h1>
         <p>Bạn đã đăng ký thành công khóa học: <span th:text="${course.title}"></span></p>
+        <p>Phương thức thanh toán: <span th:text="${paymentMethod}"></span></p>
+        <p>Thông tin khách hàng:</p>
+        <ul>
+            <li>Họ tên: <span th:text="${customerName}"></span></li>
+            <li>Giới tính: <span th:text="${customerGender}"></span></li>
+            <li>Địa chỉ: <span th:text="${customerAddress}"></span></li>
+            <li>Điện thoại: <span th:text="${customerPhone}"></span></li>
+            <li>Email: <span th:text="${customerEmail}"></span></li>
+            <li>Ngày sinh: <span th:text="${customerBirthDate}"></span></li>
+            <li>CMND: <span th:text="${customerId}"></span></li>
+        </ul>
         <p>Chúng tôi sẽ gửi thông tin chi tiết đến email của bạn.</p>
-        <a th:href="@{/courses/{id}(id=${course.id})}" class="button">Quay lại khóa học</a>
+        <a style="width: 500px;" th:href="@{/courses/{id}(id=${course.id})}" class="button">Quay lại khóa học</a>
     </div>
 </main>
 </body>

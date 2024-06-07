@@ -27,10 +27,26 @@ public class PaymentController {
                                  @RequestParam("cardNumber") String cardNumber,
                                  @RequestParam("expiryDate") String expiryDate,
                                  @RequestParam("cvv") String cvv,
+                                 @RequestParam("httt_ma") String paymentMethod,
+                                 @RequestParam("kh_ten") String customerName,
+                                 @RequestParam("kh_gioitinh") String customerGender,
+                                 @RequestParam("kh_diachi") String customerAddress,
+                                 @RequestParam("kh_dienthoai") String customerPhone,
+                                 @RequestParam("kh_email") String customerEmail,
+                                 @RequestParam("kh_ngaysinh") String customerBirthDate,
+                                 @RequestParam("kh_cmnd") String customerId,
                                  Model model) {
         // Simulate payment processing
         Course course = courseService.getCourseById(courseId);
         model.addAttribute("course", course);
+        model.addAttribute("paymentMethod", paymentMethod);
+        model.addAttribute("customerName", customerName);
+        model.addAttribute("customerGender", customerGender);
+        model.addAttribute("customerAddress", customerAddress);
+        model.addAttribute("customerPhone", customerPhone);
+        model.addAttribute("customerEmail", customerEmail);
+        model.addAttribute("customerBirthDate", customerBirthDate);
+        model.addAttribute("customerId", customerId);
         return "payment_success";
     }
 }

@@ -1,6 +1,15 @@
+/* General styles */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f8f9fa;
+}
+
 .payment-container, .success-container {
-    width: 50%;
-    margin: auto;
+    max-width: 600px;
+    margin: 50px auto;
     padding: 20px;
     border: 1px solid #ddd;
     border-radius: 5px;
@@ -9,45 +18,116 @@
     text-align: center;
 }
 
+/* Titles */
 .payment-container h1, .success-container h1 {
     font-size: 24px;
     margin-bottom: 20px;
 }
 
+/* Paragraphs */
 .payment-container p, .success-container p {
     font-size: 18px;
     margin-bottom: 10px;
 }
 
+/* Forms */
+.payment-container form {
+    width: 100%;
+}
+
+/* Form Groups */
 .payment-container form div, .success-container div {
     margin-bottom: 15px;
 }
 
+/* Labels */
 .payment-container form label, .success-container label {
     display: block;
     margin-bottom: 5px;
     font-size: 16px;
 }
 
-.payment-container form input[type="text"], .success-container input[type="text"] {
+/* Input fields */
+.payment-container form input[type="text"],
+.payment-container form input[type="email"],
+.payment-container form input[type="date"],
+.payment-container form input[type="number"],
+.payment-container form input[type="password"],
+.success-container input[type="text"],
+.success-container input[type="email"],
+.success-container input[type="date"],
+.success-container input[type="number"],
+.success-container input[type="password"] {
     width: 100%;
     padding: 10px;
     font-size: 16px;
     border: 1px solid #ddd;
     border-radius: 5px;
+    box-sizing: border-box;
 }
 
+/* Radio Buttons */
+.payment-container .custom-control.custom-radio {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.payment-container .custom-control.custom-radio input {
+    margin-right: 10px;
+}
+
+.payment-container .custom-control.custom-radio label {
+    margin: 0;
+    font-size: 16px;
+}
+
+/* Submit Button */
 .payment-container form button, .success-container .button {
     padding: 10px 20px;
     font-size: 18px;
     color: #fff;
-    background-color: #28a745;
+    background-color: #007bff;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     text-decoration: none;
+    display: inline-block;
+    margin-top: 20px;
+    width: 100%;
 }
 
 .payment-container form button:hover, .success-container .button:hover {
-    background-color: #218838;
+    background-color: #0056b3;
+}
+
+/* Success Page Styles */
+.success-container ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.success-container ul li {
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .payment-container, .success-container {
+        padding: 15px;
+        margin: 20px auto;
+    }
+
+    .payment-container h1, .success-container h1 {
+        font-size: 20px;
+    }
+
+    .payment-container p, .success-container p {
+        font-size: 16px;
+    }
+
+    .payment-container form button, .success-container .button {
+        font-size: 16px;
+    }
 }
