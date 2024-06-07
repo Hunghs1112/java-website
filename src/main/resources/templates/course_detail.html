@@ -7,24 +7,127 @@
     <meta charset="UTF-8">
     <title>Chi Tiết Khóa Học</title>
     <link rel="stylesheet" type="text/css" href="/css/course_detail.css">
+
 </head>
 <body>
 <main layout:fragment="content">
     <div class="course-detail-container">
-        <div class="course-info">
-            <img th:src="${course.img_url}" alt="Course Image" class="course-image">
+        <!-- Div 1: Course Title, Image, Video, and Price -->
+        <div class="course-header">
             <h1 th:text="${course.title}">Course Title</h1>
-            <p th:text="${course.description}">Course Description</p>
-            <p class="course-instructor">
-                Giảng viên: <span th:text="${course.course_type == 1 ? 'James Hoàng' : 'Chiêu Nguyễn'}"></span>
-            </p>
-            <p class="course-price">
-                <span class="original-price" th:text="'₫' + ${course.original_price} + ' VND'">Original Price</span>
-                <span class="discounted-price" th:text="'₫' + ${course.discounted_price} + ' VND'">Discounted Price</span>
-            </p>
-            <button class="register-button">Đăng ký khóa học</button>
+        </div>
+        <div style="display:flex; gap:120px;" class="course-detail">
+            <img th:src="${course.img_url}" alt="Course Image" class="course-image" style="max-width: 600px;">
+<div class="course-right-header">
+    <div style="margin-bottom: 20px; width: 560px;" class="video-container">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/btGYcizV0iI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+            <div style="" class="course-payment">
+                <p class="course-price">
+                    <span class="original-price" th:text="'₫' + ${course.original_price} + ' VND'" style="text-decoration: line-through;">Original Price</span>
+                    <span class="discounted-price" th:text="'₫' + ${course.discounted_price} + ' VND'">Discounted Price</span>
+                </p>
+                <a th:href="@{/payment(courseId=${course.id})}" class="register-button">Đăng ký khóa học</a>
+            </div>
+        </div>
+        </div>
+        <!-- Div 2: Course Description -->
+        <div class="course-description">
+            <h2>Mô tả khóa học</h2>
+            <div class="what-youll-learn">
+                <h3>Những gì bạn sẽ học</h3>
+                <div class="learn-list">
+                    <ul>
+                        <li>Học cách nhập bản vẽ Autocad vào Etabs đúng cách.</li>
+                        <li>Học cách thiết kế kết cấu RCC từ đầu trong Etabs.</li>
+                        <li>Học cách tạo bố trí Dầm-Cột trong Autocad.</li>
+                        <li>Học cách diễn giải các kết quả phân tích từ Etabs và tạo ra các thiết kế kinh tế.</li>
+                    </ul>
+                    <ul>
+                        <li>Học cách thực hiện phân tích động đất Tĩnh và Động.</li>
+                        <li>Cung cấp bảng EXCEL thiết kế.</li>
+                        <li>Cung cấp bản vẽ chi tiết Autocad.</li>
+                        <li>Bạn sẽ làm việc trên bốn mô hình thực tế trong Etabs.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Div 3: Course Content -->
+        <div class="course-content">
+            <h2>Nội dung khóa học</h2>
+            <button class="collapsible">Phần 1: Giới thiệu và Tài liệu khóa học</button>
+            <div class="content">
+                <ul>
+                    <li>Tài liệu khóa học và group trao đổi</li>
+                    <li>Lưu ý và sự chuẩn bị cần thiết trước khi tham gia khóa học</li>
+                </ul>
+            </div>
+
+            <button class="collapsible">Phần 2: Kiểm soát mô hình ETABS</button>
+            <div class="content">
+                <ul>
+                    <li>Giới thiệu về ETABS và cách xuất từ Autocad sang ETABS</li>
+                    <li>Kiểm tra mô hình và hoàn thiện mô hình ETABS</li>
+                </ul>
+            </div>
+
+            <button class="collapsible">Phần 3: Thiết kế sàn</button>
+            <div class="content">
+                <ul>
+                    <li>Tính toán và thiết kế sàn</li>
+                    <li>Phân biệt giữa sàn một phương và sàn hai phương</li>
+                    <li>Bài kiểm tra chương trình thiết kế sàn</li>
+                </ul>
+            </div>
+
+            <button class="collapsible">Phần 4: Tải trọng và tác động</button>
+            <div class="content">
+                <ul>
+                    <li>Tải trọng và tác động lên công trình</li>
+                </ul>
+            </div>
+            <script>
+                var coll = document.getElementsByClassName("collapsible");
+                var i;
+
+                for (i = 0; i < coll.length; i++) {
+                    coll[i].addEventListener("click", function() {
+                        this.classList.toggle("active");
+                        var content = this.nextElementSibling;
+                        if (content.style.display === "block") {
+                            content.style.display = "none";
+                        } else {
+                            content.style.display = "block";
+                        }
+                    });
+                }
+            </script>
+        </div>
+
+        <!-- Div 4: Instructor Name -->
+        <div class="course-instructor">
+            <h2>Giảng viên</h2>
+
+            <img th:src="${course.course_type == 1 ? '/images/t1.png' : '/images/t2.png'}" alt="Instructor Image" class="instructor-image">
+        </div>
+
+        <!-- Div 5: Related Courses -->
+        <div style="padding-bottom: 30px;" class="related-courses" >
+            <h2>Những khóa học có thể bạn quan tâm</h2>
+            <div style="display: flex; gap: 20px;" class="related-courses-list">
+                <div style="width: 40%;"th:each="featuredCourse : ${featuredCourses}" class="related-course-card">
+                    <img style="width:300px;" th:src="${featuredCourse.img_url}" alt="Featured Course Image" class="related-course-image">
+                    <h3 th:text="${featuredCourse.title}">Featured Course Title</h3>
+                    <p class="related-course-price" th:text="'₫' + ${featuredCourse.discounted_price} + ' VND'">Featured Course Price</p>
+                    <a th:href="@{/course/{id}(id=${featuredCourse.id})}" class="register-button">Xem chi tiết</a>
+                </div>
+            </div>
         </div>
     </div>
 </main>
+
 </body>
+
 </html>
