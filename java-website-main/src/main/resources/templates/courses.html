@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="_layout.html"
+      th:with="pageTitle='Khoá học'">
+<head>
+    <meta charset="UTF-8">
+    <title>Danh sách khóa học</title>
+    <link rel="stylesheet" type="text/css" href="/css/courses.css">
+</head>
+<body>
+<header>
+    <h1>Danh sách khóa học</h1>
+</header>
+<main layout:fragment="content" style="width: 70%; height: 100%;border: 0.5px solid red; margin-left: 0px;
+    margin-right: 0px;">
+    <div class= "courses-header">
+        <h1>Các khoá học</h1>
+    </div>
+    <div class="courses-container" style="justify-content: center;">
+        <div class="course-card" th:each="course : ${courses}" style="width: 29%;">
+            <img th:src="${course.img_url}" alt="Hình ảnh khóa học" class="course-image">
+            <h2 th:text="${course.title}">Tiêu đề khóa học</h2>
+            <p th:text="${course.description}">Mô tả khóa học</p>
+            <p class="course-price">
+                <span class="original-price" th:text="'₫' + ${course.original_price} + ' VND'">Original Price</span>
+                <span class="discounted-price" th:text="'₫' + ${course.discounted_price} + ' VND'">Discounted Price</span>
+            </p>
+            <p class="course-type" th:text="${course.course_type == 1 ? 'Tính toán kết cấu' : 'Tự động hoá các phần mềm xây dựng'}">Course Type</p>
+            <a th:href="@{/courses/{id}(id=${course.id})}" class="register-button">Xem chi tiết</a>
+        </div>
+    </div>
+</main>
+</body>
+</html>

@@ -1,0 +1,379 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+}
+
+header {
+    background-color: white;
+    color: white;
+    padding: 1rem;
+    text-align: center;
+    max-height: 270px;
+}
+/* Social Links */
+.header-social-links {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px; /* Khoảng cách giữa các biểu tượng */
+    margin-left:320px;
+    margin-right:320px;
+    padding-top: 20px;
+
+}
+
+.header-social-links a {
+    text-decoration: none;
+    color: #17a2b8; /* Màu của các biểu tượng */
+}
+
+.header-social-links a:hover {
+    color: #25657e; /* Màu khi di chuột qua biểu tượng */
+}
+
+/* Header Container */
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 320px;
+    margin-right: 320px;
+    width: calc(100% - 640px); /* Adjust width to fit within the margins */
+}
+
+/* Logo */
+.logo {
+    flex-shrink: 0; /* Prevent logo from shrinking */
+}
+
+.logo img {
+    max-width: 320px;
+    height: 200px;
+}
+
+/* Search Bar */
+.search-bar {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.search-bar input {
+    padding: 10px;
+    font-size: 16px;
+    width: 500px;
+    border: 1px solid #ccc;
+    outline: none;
+}
+
+.search-bar button {
+    padding: 10px;
+    background-color: #ccc;
+    border: none;
+    cursor: pointer;
+    color: rgb(0, 0, 0);
+    outline: none;
+}
+
+/* User Links */
+.user-links {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.user-links a {
+    color: #17a2b8;
+    text-decoration: none;
+}
+
+.user-links a:hover {
+    color: #25657e; /* Màu khi di chuột qua biểu tượng */
+}
+
+/* Sticky Navbar */
+.navbar-box{
+    display: flex;
+    background-color: #8fa3b1;
+    height: 51px;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    position: -webkit-sticky; /* For Safari */
+    position: sticky;
+    top: 0;
+    z-index: 100000; /* Ensure the navbar is above other content */
+}
+.navbar {
+    height: 100%;
+    width: 70%;
+    background-color: #8fa3b1;
+    color: white;
+
+    display: flex;
+    justify-content: space-between; /* Ensures left and right sections are spaced out */
+    align-items: center; /* Centers items vertically within the navbar */
+}
+
+.navbar-left {
+    display: flex;
+    width: 160px; /* Adjusted width to match the dropdown content */
+    background-color: #a3b6c2;
+    /* margin-left: 320px; */
+    align-items: center; /* Centers items vertically within the navbar-left */
+
+}
+
+.navbar-right {
+    height: 51px;
+    display: flex;
+    gap: 5px; /* Reduced gap between items */
+    margin-right: 320px; /* Add margin-right to align it with the container width */
+    text-align: center;
+    align-items: center; /* Centers items vertically within the navbar-right */
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    display: flex;
+    align-items: center; /* Centers text vertically */
+    justify-content: center; /* Centers text horizontally */
+    padding: 5px 10px; /* Reduced padding */
+    white-space: nowrap; /* Prevents text from wrapping to the next line */
+}
+
+.navbar a:hover {
+    background-color: #495057;
+    border-radius: 5px;
+}
+
+.navbar .register-btn {
+    background-color: #48acad;
+    color: white;
+    padding: 5px 10px; /* Reduced padding */
+    border-radius: 5px;
+    display: flex;
+    align-items: center; /* Centers text vertically */
+    justify-content: center; /* Centers text horizontally */
+    white-space: nowrap; /* Prevents text from wrapping to the next line */
+}
+
+.navbar .register-btn:hover {
+    background-color: #128293;
+}
+
+/* Dropdown Menu */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+.dropbtn {
+    background-color: #343a40;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+
+.dropbtn {
+    background-color: #a3b6c2;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .dropbtn {
+    background-color: #25657e;
+}
+
+
+.footer-section {
+    height: 320px;
+    padding: 10px;
+    background-color: #2f404b;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    color: #fff;
+    background-color: #2f404b;
+    margin-left: 320px;
+    margin-right: 320px;
+    flex-wrap: nowrap;
+    gap: 14 px; /* Add gap between sections */
+}
+
+.footer-container > div {
+    flex: 1; /* Ensure equal width for all sections */
+}
+
+.footer-bottom {
+    text-align: center;
+    padding: 10px;
+    color: #ffffff;
+    border-top: 1px solid #2f404b;
+}
+
+.footer-bottom-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #2f404b;
+    color: #ffffff;
+    height: 30px;
+}
+
+.footer-section h3 {
+    color: #ffffff;
+}
+
+.footer-section ul {
+    list-style-type: disc; /* Change to disc for bullet points */
+    padding-left: 20px; /* Add padding to indent the bullets */
+}
+
+.footer-section ul li {
+    margin: 5px 0;
+}
+
+.footer-section ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+.footer-section ul li a:hover {
+    text-decoration: underline;
+}
+
+.footer-social-links {
+    display: flex;
+    gap: 10px;
+
+}
+.footer-social-links a {
+    color: #17a2b8;
+    text-decoration: none;
+    font-size: 20px;
+}
+.footer-social-links a:hover {
+    color: #25657e; /* Màu khi di chuột qua biểu tượng */
+}
+.footer-section4 img {
+    max-height: 150px;
+    max-weight: 320px;
+    display: flex;
+    margin: 0 auto;
+}
+/* Floating Buttons */
+.floating-buttons {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.floating-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    border-radius: 50%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    width: 60px;
+    height: 60px;
+    cursor: pointer;
+    transition: transform 0.3s;
+    position: relative;
+}
+
+.floating-button img {
+    width: 40px;
+    height: 40px;
+}
+
+.floating-button span {
+    display: none;
+    position: absolute;
+    left: 70px;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    font-size: 14px;
+    color: black;
+}
+
+.floating-button:hover {
+    transform: scale(1.1);
+}
+
+.floating-button:hover span {
+    display: block;
+}
