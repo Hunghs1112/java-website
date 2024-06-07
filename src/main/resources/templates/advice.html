@@ -5,11 +5,61 @@
       th:with="pageTitle='Đăng kí tư vấn'">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" th:href="@{/css/training.css}">
+    <link rel="stylesheet" th:href="@{/css/advice.css}">
 </head>
 <body>
 <main layout:fragment="content">
-    <h1>Đăng kí tư vấn</h1>
+    <div class="section-6">
+    <div class="form-container">
+        <div class="form-content">
+            <h2>Đăng ký học/tìm hiểu</h2>
+            <p>Vui lòng hoàn thiện form thông tin bên dưới. FUNiX sẽ liên hệ với bạn để giải đáp mọi thắc mắc, hoàn toàn miễn phí.</p>
+            <form>
+                <div class="form-group-half">
+                    <div class="form-group">
+                        <textarea id="name" name="name" required placeholder="Họ & tên"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <textarea id="phone" name="phone" required placeholder="Số điện thoại"></textarea>
+                    </div>
+                </div>
+                <div class="form-group-half">
+                    <div class="form-group">
+                        <textarea id="email" name="email" required placeholder="Email"></textarea>
+                    </div>
+                </div>
+                <div class="form-group-half">
+                    <div class="form-group">
+                        <label for="dob">Nghề nghiệp</label>
+                        <select id="dob" name="dob">
+                            <option value="sinhvien">Sinh viên</option>
+                            <option value="nguoidiLam">Người đi làm</option>
+                        </select>
+
+                    </div>
+                    <div class="form-group">
+                        <label for="course">Chọn khóa học</label>
+                        <select id="course" name="course">
+
+                            <!-- Options should be populated from the database -->
+                            <option value="course1">Tính toán kết cấu</option>
+                            <option value="course2">Tự động hoá các phần mềm xây dựng</option>
+                        </select>
+
+                    </div>
+                </div>
+                <div class="form-group">
+                    <textarea id="additional" name="additional" rows="4" placeholder="Thông tin bổ sung"></textarea>
+                </div>
+                <button type="submit">Đăng ký ngay</button>
+            </form>
+        </div>
+        <div class="form-image">
+            <img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQ8dsOYnJEb_gnnfD_xRPNQLW70ytr_bPZFsDxI6Da3WGLzMfPM" alt="Registration Image">
+        </div>
+    </div>
+    </div>
+
 </main>
 </body>
 </html>

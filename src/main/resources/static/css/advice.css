@@ -3,3 +3,116 @@ margin-left:320px;
 margin-right:320px;
 min-height: 600px;
 }
+/* Section 6 */
+.section-6 {
+  background: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 0;
+}
+
+.form-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  width: 1280px;
+  background: white;
+  padding: 20px;
+
+}
+
+.form-content {
+  width: 60%;
+  margin-right: 20px;
+}
+
+.form-content h2 {
+  margin-bottom: 10px;
+  font-size: 24px;
+}
+
+.form-content p {
+  margin-bottom: 20px;
+  font-size: 14px;
+  color: #555;
+}
+
+.form-group {
+  margin-bottom: 15px;
+  width: 100%;
+}
+
+.form-group-half {
+  display: flex;
+  justify-content: space-between;
+}
+
+.form-group-half .form-group {
+  width: 320px;
+}
+
+.form-group textarea,
+.form-group select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;
+  resize: none; /* Prevent textareas from being resizable */
+}
+
+.form-group select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  padding-right: 30px; /* Add padding to fit the dropdown arrow */
+  background: url('data:image/svg+xml;utf8,<svg fill="none" height="100%" viewBox="0 0 24 24" width="100%" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5H7z" fill="%23000000"/></svg>') no-repeat right 10px center;
+  background-size: 10px 10px;
+}
+
+button {
+  background-color: #3498db;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #2980b9;
+}
+
+.form-image {
+  width: 35%;
+  text-align: center;
+}
+
+.form-image img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.section-header {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; /* Align items to the left */
+  margin-left: 20px;
+  padding-top: 10px;
+  margin-bottom: 0px;
+}
+
+.section-header i {
+  font-size: 20px; /* Adjust icon size */
+  margin-right: 10px; /* Space between icon and text */
+}
+
+.section-header h3 {
+  margin: 0; /* Remove default margin */
+  font-size: 20px; /* Adjust font size */
+  color: #333; /* Adjust color */
+}

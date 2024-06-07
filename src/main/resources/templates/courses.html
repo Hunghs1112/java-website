@@ -6,29 +6,64 @@
 <head>
     <meta charset="UTF-8">
     <title>Danh sách khóa học</title>
-    <link rel="stylesheet" type="text/css" href="/css/courses.css">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/courses.css}">
+    <script>
+        function sortCourses() {
+            const sortOption = document.getElementById('sortOptions').value;
+            window.location.href = '/courses?sort=' + sortOption;
+        }
+    </script>
 </head>
 <body>
 <header>
-    <h1>Danh sách khóa học</h1>
+    <h1 style="width: 300px;">Danh sách khóa học</h1>
 </header>
 <main layout:fragment="content">
-    <div class= "courses-header">
+    <div style= "display: flex; gap:800px;" class="courses-header">
         <h1>Các khoá học</h1>
+        <div style="margin-top: 70px;" class="sort-dropdown">
+            <label for="sortOptions">Sắp xếp theo:</label>
+            <select id="sortOptions" onchange="sortCourses()">
+                <option value="id" th:selected="${sort == 'id'}">Thứ tự</option>
+                <option value="title" th:selected="${sort == 'title'}">Tên từ A đến Z</option>
+                <option value="price" th:selected="${sort == 'price'}">Giá của khoá học</option>
+            </select>
+        </div>
     </div>
     <div class="courses-container">
-        <div class="course-card" th:each="course : ${courses}">
-            <img th:src="${course.img_url}" alt="Hình ảnh khóa học" class="course-image">
-            <h2 th:text="${course.title}">Tiêu đề khóa học</h2>
-            <p th:text="${course.description}">Mô tả khóa học</p>
-            <p class="course-price">
-                <span class="original-price" th:text="'₫' + ${course.original_price} + ' VND'">Original Price</span>
-                <span class="discounted-price" th:text="'₫' + ${course.discounted_price} + ' VND'">Discounted Price</span>
-            </p>
-            <p class="course-type" th:text="${course.course_type == 1 ? 'Tính toán kết cấu' : 'Tự động hoá các phần mềm xây dựng'}">Course Type</p>
-            <a th:href="@{/courses/{id}(id=${course.id})}" class="register-button">Xem chi tiết</a>
+        <h2>Khóa học Tính toán kết cấu</h2>
+        <div style="display: flex; gap:20px;" class="course-type" th:if="${courses1.size() > 0}">
+
+            <div class="course-card" th:each="course : ${courses1}">
+                <img th:src="${course.img_url}" alt="Hình ảnh khóa học" class="course-image">
+                <h2 th:text="${course.title}">Tiêu đề khóa học</h2>
+                <p th:text="${course.description}">Mô tả khóa học</p>
+                <p class="course-price">
+                    <span class="original-price" th:text="'₫' + ${course.original_price} + ' VND'">Original Price</span>
+                    <span class="discounted-price" th:text="'₫' + ${course.discounted_price} + ' VND'">Discounted Price</span>
+                </p>
+                <p class="course-type" th:text="'Tính toán kết cấu'">Course Type</p>
+                <a th:href="@{/courses/{id}(id=${course.id})}" class="register-button">Xem chi tiết</a>
+            </div>
+        </div>
+        <h2>Khóa học Tự động hoá các phần mềm xây dựng</h2>
+        <div style="display: flex; gap:20px;" class="course-type" th:if="${courses2.size() > 0}">
+
+            <div class="course-card" th:each="course : ${courses2}">
+                <img th:src="${course.img_url}" alt="Hình ảnh khóa học" class="course-image">
+                <h2 th:text="${course.title}">Tiêu đề khóa học</h2>
+                <p th:text="${course.description}">Mô tả khóa học</p>
+                <p class="course-price">
+                    <span class="original-price" th:text="'₫' + ${course.original_price} + ' VND'">Original Price</span>
+                    <span class="discounted-price" th:text="'₫' + ${course.discounted_price} + ' VND'">Discounted Price</span>
+                </p>
+                <p class="course-type" th:text="'Tự động hoá các phần mềm xây dựng'">Course Type</p>
+                <a th:href="@{/courses/{id}(id=${course.id})}" class="register-button">Xem chi tiết</a>
+            </div>
         </div>
     </div>
 </main>
+
+
 </body>
 </html>

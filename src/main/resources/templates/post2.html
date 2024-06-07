@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="_layout.html"
+      th:with="pageTitle='Blog Post 2'">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" th:href="@{/css/training.css}">
+    <title>Blog Post 2</title>
+</head>
+<body>
+<main layout:fragment="content">
+    <div class="container">
+        <h1>Độ võng của dầm – Tích phân 2 lần độ cong 1/r</h1>
+        <p>Khi đánh giá một phần mềm mới hoặc 1 file excel tính toán, thường thì mình sẽ tiến hành so sánh kết quả của phần mềm với file Excel. Khi kiểm tra kỹ hơn, có 1 số phần mềm có sự khác biệt kết quả với file Excel, cụ thể là về kết quả độ võng. Một số phần mềm áp dụng cùng một hệ số phân phối ζ (mục 7.4.3-Eurocode 2) cho tất cả các tiết diện của dầm, giá trị này được tính tại vị trí có mô-men lớn nhất (thường là giữa nhịp đối với dầm giản đơn). Hệ số này giảm khi chúng ta tiến đến điểm M = 0. Do đó, một số phần mềm cho kết quả khá bất lợi.</p>
+
+        <p>Ngoài ra, phần mềm không tính đến sự tách biệt của các giai đoạn tải trọng, điều mà file Excel đã được tích hợp. Đôi khi, độ võng sau khi xây dựng rất nghiêm trọng tùy thuộc vào độ nhạy cảm của các phần như façade hay tường gạch, tương tự đối với dầm chuyển trong nhiều giai đoạn xây dựng. Link bài viết về tính toán độ võng theo giai đoạn thi công:
+            <a href="https://www.facebook.com/permalink.php?story_fbid=pfbid07SyPiKp1ZKDiMGqwv4xwi4htg5qpawBc6UFvAgtCY2pdPei32DQhbRnXz2rjXSMml&id=61559739758681">https://www.facebook.com/permalink.php?story_fbid=pfbid07SyPiKp1ZKDiMGqwv4xwi4htg5qpawBc6UFvAgtCY2pdPei32DQhbRnXz2rjXSMml&id=61559739758681</a></p>
+
+        <p>Giá trị độ võng được tính toán bằng tích phân 2 lần của đạo hàm : y'' = M/EI. Ngoài ra, lực dọc trục (kéo/nén) cũng được kể đến trong tính toán nhằm mục đích xác định gần đúng nhất có thể độ võng danh định theo Eurocode2, qua đó cũng góp phần tối ưu thiết kế.</p>
+
+        <p>Tóm lại, trong trường hợp không cần quá tối ưu thiết kế, phần lớn các phần mềm tính toán là tương đối bất lợi và đã khá an toàn. Trong các trường hợp phần mềm tính toán cho ra kết quả rất sát và bị vượt quá giới hạn, có thể sử dụng phương án giải quyết như bài viết để tối ưu hơn về kết quả bài toán.</p>
+
+        <p>Mọi thắc mắc cần giải đáp vui long liên hệ Zalo 0961.050.948</p>
+    </div>
+</main>
+</body>
+</html>

@@ -58,10 +58,6 @@ public class HomeController {
         return "about";
     }
 
-    @GetMapping("/blog")
-    public String blogPage() {
-        return "blog";
-    }
 
     @GetMapping("/software")
     public String softwarePage() {
@@ -87,4 +83,6 @@ public class HomeController {
     public String registerPage() {
         return "advice";
     }
+
+
 }

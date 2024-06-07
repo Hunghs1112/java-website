@@ -6,10 +6,35 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" th:href="@{/css/training.css}">
+    <title>Blog Chia Sẻ</title>
 </head>
 <body>
 <main layout:fragment="content">
-    <h1>Blog Chia Sẻ</h1>
+    <div class="container">
+        <h1>Blog Chia Sẻ</h1>
+
+        <div style="display:flex; gap:100px;" class="post">
+<div class="post-image">
+            <img style="width: 300px;
+  height: 200px;" th:src="@{/images/post1.png}" alt="Image for Blog Post 1">
+    </div>
+            <div class="post-text">
+            <h2>TỐI ƯU HÓA ĐỘ VÕNG DẦM/ SÀN THEO EUROCODE 2</h2>
+            <p>This is a short excerpt for blog post 1. <a th:href="@{/post1}">Đọc bài viết</a></p>
+            </div>
+        </div>
+
+        <div style="display:flex; gap: 100px;" class="post">
+            <div class="post-image">
+            <img style="width: 300px;
+  height: 200px;" th:src="@{/images/post2.jpeg}" alt="Image for Blog Post 2">
+            </div>
+            <div class="post-text">
+            <h2>Độ võng của dầm – Tích phân 2 lần độ cong 1/r</h2>
+            <p>This is a short excerpt for blog post 2. <a th:href="@{/post2}">Đọc bài viết</a></p>
+            </div>
+        </div>
+    </div>
 </main>
 </body>
 </html>

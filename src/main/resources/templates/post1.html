@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="_layout.html"
+      th:with="pageTitle='Blog Post 1'">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" th:href="@{/css/training.css}">
+    <title>Blog Post 1</title>
+</head>
+<body>
+<main layout:fragment="content">
+    <div class="container">
+        <h1>BLOG CHIA SẺ/ KẾT CẤU</h1>
+        <h2>Tiêu đề: TỐI ƯU HÓA ĐỘ VÕNG DẦM/ SÀN THEO EUROCODE 2</h2>
+        <p>Ngày nay với sự phổ biến của các phần mềm tính toán kết cấu, chúng ta có thể tính toán dễ dàng độ võng của dầm, sàn với các phần mềm tiêu biểu như Safe, Scia, Graitec.</p>
+        <p>Chắc hẳn từ lúc biết tới phần mềm SAFE, phần lớn mọi người ai cũng từng đọc thấy bài viết hoặc làm theo công thức tính toán độ võng bằng công thức huyền thoại này: f = f1 – f2 + f3 (Ví dụ có thể đọc bài viết ở link sau: <a href="https://papanh.com/tinh-toan-do-vong-san-btct-safe-1/">https://papanh.com/tinh-toan-do-vong-san-btct-safe-1/</a>)</p>
+        <p>Làm theo công thức trên là hoàn toàn không sai, đó là phương pháp gần đúng có thể sử dụng nhưng giá trị độ võng thu được ở trên sẽ là gì? Đó chính là độ võng của dầm/ sàn ở dài hạn, khi có phần hoạt tải ngắn hạn gia tăng thêm vào nữa. Trong tổ hợp thành phần dài hạn thường sẽ là: Tĩnh tải + 0.3 Hoạt Tải (Eurocode) và hoạt tải ngắn hạn gia tăng thêm là 0.7 Hoạt tải. Bởi vậy nếu lấy f1-f2+f3 đem đi so sánh với L/250 thì theo Eurocode đó là quá thừa thãi. Về bản chất thì độ võng dài hạn chỉ là f3 mà thôi!</p>
+        <p>Ngoài giới hạn giá trị f3 đem so sánh với L/250, còn có tiêu chí so sánh nữa đó là độ võng gây hại sau thi công, thường là độ võng gây ra nứt tường, vỡ kính façade,… Định nghĩa về độ võng gia tăng sau thi công đó là độ võng thay đổi từ lúc bắt đầu lắp đặt các cấu kiện nhạy cảm, dễ vỡ đó cho tới dài hạn hoặc cho tới dài hạn + gia tăng hoạt tải ngắn hạn. Các nước theo Eurocode thường giới hạn độ võng này là L/500.</p>
+        <p>Ở phương diện tối ưu hóa kết cấu, nên phân ra từng giai đoạn chất tải để tính võng thì giá trị thu được sẽ tối ưu nhất, điều này phần mềm SAFE có thể làm được nhưng thường sẽ ít người sử dụng, bản thân tôi cũng vậy. Dưới đây là mô tả sơ bộ về phương pháp chất tải theo thời gian để tính toán độ võng dầm/ sàn:</p>
+        <ol>
+            <li>Ngay sau khi dỡ ván khuôn, dầm/ sàn sẽ võng tức thời fb tại thời điểm T1.</li>
+            <li>Cho tới trước lúc lắp đặt cấu kiện dễ vỡ, từ T1 tới T2, dầm/sàn võng từ biến + co ngót thêm tới fc.</li>
+            <li>Lắp đặt cấu kiện dễ vỡ, tải trong do cấu kiện đó sẽ gây ra độ võng tức thời thêm vào -> fd.</li>
+            <li>Cho tới trước khi thi công lớp hoàn thiện ở T3, thì dầm và sàn sẽ từ biến và co ngót, võng tới giá trị fe.</li>
+            <li>Thi công lớp hoàn thiện ở T3 sẽ gây ra võng tức thời -> dầm sàn võng tới giá trị ff.</li>
+            <li>Từ T3 tới T4, dầm sàn lại tiếp tục từ biến, co ngót thêm và võng tới giá trị fg.</li>
+            <li>Ở thời điểm T4, 0.3 Hoạt tải được thêm vào sẽ gây ra võng tức thời -> dầm sàn sẽ võng tới fh.</li>
+            <li>Tới thời điểm 50 năm, dầm sàn chịu ảnh hưởng từ biến, co ngót sẽ võng tới giá trị fj (&lt;L/250).</li>
+            <li>Khi có 0.7 Hoạt tải gia tăng thêm tại 1 thời điểm nào đó bất kỳ ở dài hạn, dầm sàn sẽ võng thêm tới giá trị fk. Khi 0.7 Hoạt tải này được loại bỏ thì dầm/ sàn sẽ quay trở lại giá trị fj.</li>
+        </ol>
+        <p>Có 2 giới hạn cần tuân thủ:</p>
+        <ul>
+            <li>Dài hạn: fj (tức là f3 huyền thoại) phải bé hơn L/250.</li>
+            <li>Độ võng sau thi công (fj – fd hoặc fk – fd) phải bé hơn L/500 (lựa chọn fj hay fd phụ thuộc từng quốc gia và tiêu chí mà bên sản xuất các cấu kiện như cửa kính, façade,… đề ra).</li>
+        </ul>
+        <p>Trong bài viết tiếp theo, tôi sẽ dẫn chứng 1 ví dụ minh họa tính toán bằng Excel VBA tính tích phân 2 lần đường cong 1/r để so sánh với tính toán bằng 1 phần mềm phần tử hữu hạn. Mọi người hãy đón xem sự so sánh nhé. Chúc mọi người 1 ngày vui vẻ.</p>
+        <p>Mọi thắc mắc cần giải đáp vui long liên hệ</p>
+    </div>
+</main>
+</body>
+</html>

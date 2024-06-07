@@ -5,14 +5,15 @@ body {
     background-color: #f9f9f9;
 }
 
-
 main {
-margin-left:320px;
-margin-right:320px;
-min-height: 600px;
+    margin-left: 320px;
+    margin-right: 320px;
+    min-height: 600px;
 }
-
-
+.courses-header {
+display: flex;
+gap: 800px
+}
 .courses-container {
     display: flex;
     flex-wrap: wrap;
@@ -26,7 +27,6 @@ min-height: 600px;
     border-radius: 8px;
     width: 290px;
     margin-bottom: 16px;
-
     text-align: left;
 }
 
@@ -77,4 +77,23 @@ min-height: 600px;
 
 .register-button:hover {
     background-color: #e67e22;
+}
+
+/* Dropdown styling */
+.sort-dropdown {
+    margin-top: 70px;
+}
+
+.sort-dropdown select {
+    padding: 8px 16px;
+    font-size: 1rem;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    cursor: pointer;
+    transition: border-color 0.3s ease;
+}
+
+.sort-dropdown select:hover {
+    border-color: #888;
 }
