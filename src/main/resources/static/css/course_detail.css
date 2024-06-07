@@ -15,7 +15,8 @@ min-height: 600px;
 
 
 .course-detail-container {
-
+    display: flex;
+    gap: 20px;
     margin-top: 20px;
 }
 
@@ -28,7 +29,7 @@ min-height: 600px;
 }
 
 .course-image {
-    width: 600px;
+    width: 100%;
     border-radius: 8px 8px 0 0;
 }
 
@@ -102,61 +103,3 @@ min-height: 600px;
     font-size: 1rem;
     color: #666;
 }
-.related-course-card {
-    flex: 1 1 25%; /* Adjusting the width of each card to ensure 4 in a row */
-    background-color: #fff;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    text-align: left;
-}
-.register-button {
-    background-color: #f39c12;
-    color: white;
-    border: none;
-    padding: 0.5rem 1rem;
-    cursor: pointer;
-    border-radius: 4px;
-    font-size: 1rem;
-    transition: background-color 0.3s ease;
-    display: block;
-    margin-top: 16px;
-    text-align: center;
-}
- .collapsible {
-            background-color: #f9f9f9;
-            color: #444;
-            cursor: pointer;
-            padding: 18px;
-            width: 100%;
-            border: none;
-            text-align: left;
-            outline: none;
-            font-size: 15px;
-        }
-
-        .active, .collapsible:hover {
-            background-color: #ddd;
-        }
-
-        .content {
-            padding: 0 18px;
-            display: none;
-            overflow: hidden;
-            background-color: #f1f1f1;
-        }
-
-        .content ul {
-            list-style: none;
-            padding: 0;
-        }
-
-        .content ul li {
-            padding: 10px 0;
-        }
-
-        .content ul li ul {
-            padding-left: 20px;
-        }
-
-        .content ul li ul li {
-            padding: 5px 0;
-        }

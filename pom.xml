@@ -47,12 +47,12 @@
 			<artifactId>spring-session-core</artifactId>
 		</dependency>
 
-
-<!--		&lt;!&ndash; Spring Boot Starter Security &ndash;&gt;-->
+<!--		&lt;!&ndash; Thymeleaf Extras for Spring Security &ndash;&gt;-->
 <!--		<dependency>-->
-<!--			<groupId>org.springframework.boot</groupId>-->
-<!--			<artifactId>spring-boot-starter-security</artifactId>-->
+<!--			<groupId>org.thymeleaf.extras</groupId>-->
+<!--			<artifactId>thymeleaf-extras-springsecurity6</artifactId>-->
 <!--		</dependency>-->
+
 		<!-- MySQL Connector -->
 		<dependency>
 			<groupId>com.mysql</groupId>

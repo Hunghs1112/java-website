@@ -56,7 +56,7 @@ public class CourseController {
                 .filter(c -> !c.getId().equals(id))
                 .collect(Collectors.collectingAndThen(Collectors.toList(), collected -> {
                     Collections.shuffle(collected);
-                    return collected.stream().limit(4).collect(Collectors.toList());
+                    return collected.stream().limit(5).collect(Collectors.toList());
                 }));
         model.addAttribute("course", course);
         model.addAttribute("featuredCourses", featuredCourses);
@@ -71,7 +71,7 @@ public class CourseController {
                 .filter(c -> !c.getId().equals(id))
                 .collect(Collectors.collectingAndThen(Collectors.toList(), collected -> {
                     Collections.shuffle(collected);
-                    return collected.stream().limit(4).collect(Collectors.toList());
+                    return collected.stream().limit(5).collect(Collectors.toList());
                 }));
         model.addAttribute("course", course);
         model.addAttribute("featuredCourses", featuredCourses);
