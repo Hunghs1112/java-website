@@ -1,0 +1,405 @@
+/* General styles */
+
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+main {
+margin-left:320px;
+margin-right:320px;
+min-height: 600px;
+}
+
+
+.div {
+  padding: 0px;
+  width: 100%;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+/* Section colors */
+
+.section-1 {
+  background: white;
+}
+/* Slideshow styles */
+.slideshow-container {
+  position: relative;
+  width: 100%;
+  margin: auto;
+  overflow: hidden; /* Hide overflow to keep elements within container */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Subtle shadow for depth */
+}
+
+.mySlides {
+  display: flex;
+}
+
+img {
+  width: 100%;
+  vertical-align: middle;
+}
+
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  user-select: none;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  transform: translateY(-50%);
+}
+
+.prev {
+  left: 10px;
+}
+
+.next {
+  right: 10px;
+}
+
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+.dot-container {
+  text-align: center;
+  padding: 20px;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+.section-2 {
+  background: #dad7d2;
+}
+
+.course-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  height: auto; /* Adjust height as needed */
+}
+
+.course-card {
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  margin: 1rem;
+  overflow: hidden;
+  width: 30%; /* Ensure three cards per row */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.course-image img {
+  width: 100%;
+  height: auto;
+}
+
+.course-details {
+  padding: 1rem;
+  text-align: center;
+}
+
+.course-details h2 {
+  font-size: 1.2rem;
+  margin: 0.5rem 0;
+}
+
+.course-details p {
+  font-size: 1rem;
+  color: #555;
+}
+
+.course-price {
+  font-size: 1.2rem;
+  color: #e74c3c;
+  margin: 1rem 0;
+}
+
+.original-price {
+  text-decoration: line-through;
+  color: #999;
+  margin-right: 0.5rem;
+}
+
+.discounted-price {
+  color: #e74c3c;
+  font-weight: bold;
+}
+
+.register-button {
+  background-color: #f39c12;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  border-radius: 4px;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.register-button:hover {
+  background-color: #e67e22;
+}
+
+.section-3 {
+  background: #eae9e5;
+}
+
+.section-4 {
+  background: #d3d3d3;
+}
+
+.section-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.section-header i {
+  font-size: 1.5rem;
+  margin-right: 0.5rem;
+}
+
+.section-header h3 {
+  font-size: 1.5rem;
+  margin: 0;
+}
+
+.book-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start; /* Ensure cards appear from left to right */
+  height: auto; /* Adjust height as needed */
+}
+
+.book-card {
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  margin: 0.5rem; /* Reduced margin for closer spacing */
+  overflow: hidden;
+  width: 18%; /* Ensure five cards per row */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease; /* Add transition for hover effect */
+}
+
+.book-card:hover {
+  transform: scale(1.05); /* Enlarge on hover */
+}
+
+.book-image {
+  width: 100%;
+  height: 300px;
+  padding-bottom: 20px; /* Adjust this ratio to match your image aspect ratio */
+  position: relative;
+}
+
+.book-image img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+
+.section-5 {
+  background: white; /* White background to match the photo backdrop */
+}
+
+.section-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+}
+
+.services-container {
+  display: flex;
+  justify-content: space-between; /* Ensure all cards are in one row */
+  flex-wrap: nowrap; /* Prevent wrapping */
+}
+
+.service-card {
+  background: #f9f9f9;
+ 
+  
+  padding: 20px;
+  height: 300px;
+  width: 18%; /* Adjust width to fit 5 items evenly */
+  transition: transform 0.3s;
+  text-align: left; /* Align text to the left */
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+}
+
+.service-image {
+  width: 100%;
+  max-height: 125px;
+  border-radius: 10px;
+}
+
+.service-card h2 {
+  font-size: 18px;
+  margin: 10px 0;
+  text-align: left; /* Align text to the left */
+}
+
+.service-card p {
+  font-size: 14px;
+  margin-bottom: 10px;
+  text-align: left; /* Align text to the left */
+}
+
+.service-card a {
+  color: #3498db;
+  text-decoration: none;
+  font-weight: bold;
+  text-align: left; /* Align text to the left */
+}
+
+.service-card a:hover {
+  text-decoration: underline;
+}
+
+/* Section 6 */
+.section-6 {
+  background: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 0;
+}
+
+.form-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  width: 1280px;
+  background: white;
+  padding: 20px;
+  
+}
+
+.form-content {
+  width: 60%;
+  margin-right: 20px;
+}
+
+.form-content h2 {
+  margin-bottom: 10px;
+  font-size: 24px;
+}
+
+.form-content p {
+  margin-bottom: 20px;
+  font-size: 14px;
+  color: #555;
+}
+
+.form-group {
+  margin-bottom: 15px;
+  width: 100%;
+}
+
+.form-group-half {
+  display: flex;
+  justify-content: space-between;
+}
+
+.form-group-half .form-group {
+  width: 320px;
+}
+
+.form-group textarea,
+.form-group select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;
+  resize: none; /* Prevent textareas from being resizable */
+}
+
+.form-group select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  padding-right: 30px; /* Add padding to fit the dropdown arrow */
+  background: url('data:image/svg+xml;utf8,<svg fill="none" height="100%" viewBox="0 0 24 24" width="100%" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5H7z" fill="%23000000"/></svg>') no-repeat right 10px center;
+  background-size: 10px 10px;
+}
+
+button {
+  background-color: #3498db;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #2980b9;
+}
+
+.form-image {
+  width: 35%;
+  text-align: center;
+}
+
+.form-image img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.section-header {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; /* Align items to the left */
+  margin-left: 20px;
+  padding-top: 10px;
+  margin-bottom: 0px;
+}
+
+.section-header i {
+  font-size: 20px; /* Adjust icon size */
+  margin-right: 10px; /* Space between icon and text */
+}
+
+.section-header h3 {
+  margin: 0; /* Remove default margin */
+  font-size: 20px; /* Adjust font size */
+  color: #333; /* Adjust color */
+}

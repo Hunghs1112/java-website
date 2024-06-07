@@ -1,0 +1,105 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+}
+
+
+
+main {
+margin-left:320px;
+margin-right:320px;
+min-height: 600px;
+}
+
+
+.course-detail-container {
+    display: flex;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.course-info {
+    flex: 2;
+    background-color: white;
+    padding: 16px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.course-image {
+    width: 100%;
+    border-radius: 8px 8px 0 0;
+}
+
+.course-info h1 {
+    font-size: 1.5rem;
+    margin: 16px 0;
+}
+
+.course-info p {
+    font-size: 1rem;
+    color: #666;
+}
+
+.course-price {
+    font-size: 1.2rem;
+    color: #e74c3c;
+    margin: 1rem 0;
+}
+
+.original-price {
+    text-decoration: line-through;
+    color: #999;
+    margin-right: 0.5rem;
+}
+
+.discounted-price {
+    color: #e74c3c;
+    font-weight: bold;
+}
+
+.register-button {
+    background-color: #f39c12;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+    display: block;
+    margin-top: 16px;
+    text-align: center;
+}
+
+.register-button:hover {
+    background-color: #e67e22;
+}
+
+.course-video {
+    flex: 1;
+    background-color: white;
+    padding: 16px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.course-description {
+    margin-top: 40px;
+    background-color: white;
+    padding: 16px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.course-description h2 {
+    margin-bottom: 16px;
+}
+
+.course-description p {
+    font-size: 1rem;
+    color: #666;
+}
